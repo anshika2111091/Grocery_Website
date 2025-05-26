@@ -1,22 +1,28 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import Categories from './components/Categories'
-import Hero from './components/Hero'
-import Seller from './components/Seller'
-import Contact from './components/Contact'
-import Features from './components/Features'
-import Footer from './components/Footer'
+import Home from './pages/Home'
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AllProducts from './pages/AllProducts';
+import Product from './pages/Product';
 
 const App = () => {
   return (
-    <div><Navbar/>
-      <Hero/>
-    <Categories/>
-    <Seller/>
-    <Features/>
-    <Contact/>
-    <Footer/>
-  </div>
+    <Router>
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/products" element={<AllProducts/>} />
+          <Route path="/products/*" element={<Product/>} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </div>
+  </Router>
   )
 }
 

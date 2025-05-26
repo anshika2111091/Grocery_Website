@@ -12,8 +12,8 @@ const Navbar = () => {
         <div><img src={logo} className='w-34 md:w-38' alt="" /></div>
         <div className='flex xl:gap-8 md:gap-4 gap-6 items-center '>
             <div className="border border-gray-300 text-gray-600 px-3 py-1 rounded-full text-xs hidden md:flex cursor-pointer opacity-80">Seller Dashboard</div>
-            <a href="" className='text-gray-700 text-[16px] hidden md:flex'>Home</a>
-            <a href="" className='text-gray-700 text-[16px] hidden md:flex'>All Products</a>
+            <a href="/" className='text-gray-700 text-[16px] hidden md:flex'>Home</a>
+            <a href="/products" className='text-gray-700 text-[16px] hidden md:flex'>All Products</a>
             <div className=' items-center lg:flex  hidden justify-between px-3 py-1 border border-gray-300 rounded-full'>
             <input type="text"  placeholder='Search products' className='outline-none placeholder:text-[14px]' />
             <img src={search} alt="" />
