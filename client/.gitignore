@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Optional: Next.js specific (if using)
+.next/
+out/
+
+# Optional: Mac + Linux swap files
+*.swp
+
+# Optional: Coverage reports
+coverage/
+
+# Optional: local dev databases or runtime files
+*.sqlite
+*.log
