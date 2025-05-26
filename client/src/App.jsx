@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import Seller from './components/Seller'
 import Contact from './components/Contact'
 import Features from './components/Features'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
     <Seller/>
     <Features/>
     <Contact/>
+    <Footer/>
   </div>
   )
 }
