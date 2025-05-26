@@ -3,13 +3,14 @@ import logo from "../assets/logo.svg";
 import search from "../assets/search_icon.svg";
 import cart from "../assets/nav_cart_icon.svg";
 import menu from "../assets/menu_icon.svg";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <>
      <div className='flex justify-center w-[100vw]'>
         <div className='flex justify-between xl:w-[80vw] w-[95vw] h-[80px] items-center'>
-        <div><img src={logo} className='w-34 md:w-38' alt="" /></div>
+       <Link to="/"> <div><img src={logo} className='w-34 md:w-38 cursor-pointer' alt="" /></div></Link>
         <div className='flex xl:gap-8 md:gap-4 gap-6 items-center '>
             <div className="border border-gray-300 text-gray-600 px-3 py-1 rounded-full text-xs hidden md:flex cursor-pointer opacity-80">Seller Dashboard</div>
             <a href="/" className='text-gray-700 text-[16px] hidden md:flex'>Home</a>

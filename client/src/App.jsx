@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AllProducts from './pages/AllProducts';
 import Product from './pages/Product';
+import RelatedProducts from './components/RelatedProducts';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/" element={<Home/>} />
           <Route path="/products" element={<AllProducts/>} />
           <Route path="/products/*" element={<Product/>} />
+          <Route path="/related" element={<RelatedProducts/>} />
         </Routes>
       </main>
 
