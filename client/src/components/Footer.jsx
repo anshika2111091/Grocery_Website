@@ -10,7 +10,7 @@ const Footer = () => {
             <p className='text-gray-500 md:text-[16px] sm:text-[14px] text-[16px]'>We deliver fresh groceries and snacks straight to your door. Trusted by thousands, we aim to make your shopping experience simple and affordable.</p>
         </div>
 
-<div className='flex lg:gap-20 md:gap-10 sm:gap-7 flex-col sm:flex-row gap-8'>
+<div className='flex lg:gap-20 md:gap-10 sm:gap-7 flex-wrap sm:flex-row gap-8'>
 {footerLinks.map((item,index)=>(
     <>
     <div className='flex flex-col sm:gap-6 gap-3 '>

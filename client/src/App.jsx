@@ -7,6 +7,7 @@ import AllProducts from './pages/AllProducts';
 import Product from './pages/Product';
 import RelatedProducts from './components/RelatedProducts';
 import Item from './pages/Item';
+import LoginSignup from './components/LoginSignup';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/products/item" element={<Item/>} />
           <Route path="/products/*" element={<Product/>} />
           <Route path="/related" element={<RelatedProducts/>} />
+          <Route path="/sign" element={<LoginSignup/>} />
         </Routes>
       </main>
 

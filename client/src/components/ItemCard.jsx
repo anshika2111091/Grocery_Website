@@ -6,19 +6,19 @@ import star_dull from "../assets/star_dull_icon.svg"
 import { Link } from 'react-router-dom';
 const ItemCard = ({item}) => {
   return (
-   <Link to="/products/item"> <div className='px-3 py-4 border border-gray-300 rounded-[5px] flex flex-col '>
+   <Link to="/products/item"> <div className='sm:px-3 px-2 py-4 border border-gray-300 rounded-[5px] flex flex-col '>
         <div className='flex justify-center'>
         <img className='hover:scale-110 duration-200 transition-transform' src={item.image[0]} width={130} height={130} alt="" />
         </div>
      
-        <p className='text-gray-400 text-[14px]'>{item.category}</p>
-        <p className='text-[18px] font-medium'>{item.name}</p>
+        <p className='text-gray-400 md:text-[14px] text-[8px]'>{item.category}</p>
+        <p className='md:text-[18px] font-medium text-[12px]'>{item.name}</p>
         <div className='flex gap-0.5'>
         {[...Array(4)].map((_, index) => (
-<img width={14} height={14} src={star}/>
+<img src={star} className='w-[10px] h-[10px] md:w-[14px] md:h-[14px]'/>
 ))}
         {[...Array(1)].map((_, index) => (
-<img width={14} height={14} src={star_dull}/> 
+<img  src={star_dull}  className='w-[10px] h-[10px] md:w-[14px] md:h-[14px]'/> 
 ))} <p className='text-gray-400'>(4)</p>
         </div>
         <div className='flex gap-10 mt-2 w-[100%] justify-between'>

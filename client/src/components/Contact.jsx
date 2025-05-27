@@ -18,7 +18,7 @@ const Contact = () => {
             placeholder="Enter your email id"
           />
         </div>
-        <div className="text-white  bg-[#4fbf8b] flex justify-center items-center border-collapse  px-8 py-4 rounded-tr-[5px] rounded-br-[5px]">
+        <div className="text-white  bg-[#4fbf8b] flex justify-center items-center border-collapse hover:bg-[#45a87a] cursor-pointer px-8 py-4 rounded-tr-[5px] rounded-br-[5px]">
           Subscribe
         </div>
       </div>

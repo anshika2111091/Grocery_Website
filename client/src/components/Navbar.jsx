@@ -4,8 +4,26 @@ import search from "../assets/search_icon.svg";
 import cart from "../assets/nav_cart_icon.svg";
 import menu from "../assets/menu_icon.svg";
 import { Link } from "react-router-dom";
+import {useState} from "react";
+import Modal from '@mui/material/Modal';
+import LoginSignup from "./LoginSignup";
+import { Box } from "@mui/material";
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  borderRadius:"10px",
+  outline: 'none',
+
+
+};
 
 const Navbar = () => {
+  const [open, setOpen] =useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
       <div className="flex justify-center w-[100vw]">
@@ -44,9 +62,19 @@ const Navbar = () => {
               <img src={cart} alt="" />
             </div>
 
-            <div className="cursor-pointer px-8 py-2 hidden md:flex bg-[#4fbf8b] hover:bg-[#45a87a] transition text-white rounded-full">
+            <div onClick={handleOpen} className="cursor-pointer px-8 py-2 hidden md:flex bg-[#4fbf8b] hover:bg-[#45a87a] transition text-white rounded-full">
               Login
             </div>
+            <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <LoginSignup/>
+        </Box>
+      </Modal>
             <div className="md:hidden">
               <img src={menu} alt="" />
             </div>
