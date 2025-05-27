@@ -3,9 +3,10 @@ import { assets } from '../assets/assets'
 import star from "../assets/star_icon.svg"
 import cart from "../assets/cart_icon.svg";
 import star_dull from "../assets/star_dull_icon.svg"
+import { Link } from 'react-router-dom';
 const ItemCard = ({item}) => {
   return (
-    <div className='px-3 py-4 border border-gray-300 rounded-[5px] flex flex-col '>
+   <Link to="/products/item"> <div className='px-3 py-4 border border-gray-300 rounded-[5px] flex flex-col '>
         <div className='flex justify-center'>
         <img className='hover:scale-110 duration-200 transition-transform' src={item.image[0]} width={130} height={130} alt="" />
         </div>
@@ -20,7 +21,7 @@ const ItemCard = ({item}) => {
 <img width={14} height={14} src={star_dull}/> 
 ))} <p className='text-gray-400'>(4)</p>
         </div>
-        <div className='flex gap-10 mt-2'>
+        <div className='flex gap-10 mt-2 w-[100%] justify-between'>
             <div className='flex items-end gap-1'>
             <p className='text-[#4fbf8b] text-[20px] font-semibold'>${item.price}</p>
             <p className='text-[15px] text-gray-400 line-through'>${item.offerPrice}</p>
@@ -32,7 +33,7 @@ const ItemCard = ({item}) => {
             </div>
         </div>
 
-    </div>
+    </div></Link>
   )
 }
 
