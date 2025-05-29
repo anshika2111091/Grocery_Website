@@ -3,11 +3,21 @@ import arrow from "../assets/arrow_right_icon_colored.svg";
 import { Link } from 'react-router-dom';
 import remove from "../assets/remove_icon.svg";
 import potato from "../assets/potato_image_1.png";
+import { ToastContainer, toast } from 'react-toastify';
 
 const ShoppingItems = () => {
     const [quantity,setQuantity]=useState(1);
+    const notify = (e) => {
+        e.stopPropagation(); 
+        toast.success("Removed from Cart",{
+        position: 'top-center',
+        autoClose: 2000,         
+        closeOnClick: true,
+        hideProgressBar:true,         
+      });}
   return (
     <div className='lg:w-[60vw] w-[95vw]'>
+           <ToastContainer />
         <div className='flex gap-2 items-end'>
         <p className='text-gray-700 text-[30px] font-medium'>Shopping Cart</p>
         <p className='mb-1.5 text-[#4fbf8b] font-medium'>3 Items</p>
@@ -30,7 +40,7 @@ const ShoppingItems = () => {
             <p className='text-gray-400 text-sm md:text-base '>Weight N/A</p>
 
 
-           <div className='flex text-gray-400 text-sm md:text-base  '>Qty:<select
+           <div className='flex text-gray-400 text-sm md:text-base'>Qty:<select
       value={quantity}
       onChange={(e) => (setQuantity(Number(e.target.value)))}
      className='outline-none'
@@ -40,14 +50,12 @@ const ShoppingItems = () => {
           {i + 1}
         </option>
       ))}
-    </select></div> 
-          
-
+    </select></div>    
         </div>
     
     </div>
-    <div className='w-[20%] text-gray-500 text-md font-medium flex justify-center'>$88</div>
-    <div className='w-[20%] cursor-pointer flex justify-center'><img src={remove} width={25} height={25} className='md:w-[25px] md:h-[25px] w-[20px] h-[20px]' alt="" /></div>
+    <div className='w-[20%] text-gray-500 text-md font-medium flex justify-center'>$ {88*quantity}</div>
+    <div className='w-[20%] cursor-pointer flex justify-center' onClick={notify}><img src={remove} width={25} height={25} className='md:w-[25px] md:h-[25px] w-[20px] h-[20px]' alt="" /></div>
 </div>
 
 
