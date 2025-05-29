@@ -3,11 +3,11 @@ import logo from "../assets/logo.svg";
 import search from "../assets/search_icon.svg";
 import cart from "../assets/nav_cart_icon.svg";
 import menu from "../assets/menu_icon.svg";
-import { Link } from "react-router-dom";
 import {useState} from "react";
 import Modal from '@mui/material/Modal';
 import LoginSignup from "./LoginSignup";
 import { Box } from "@mui/material";
+import { Link } from "react-router-dom";
 const style = {
   position: 'absolute',
   top: '50%',
@@ -47,7 +47,7 @@ const Navbar = () => {
             >
               All Products
             </a>
-            <div className=" items-center lg:flex  hidden justify-between px-3 py-1 border border-gray-300 rounded-full">
+         <div className=" items-center lg:flex  hidden justify-between px-3 py-1 border border-gray-300 rounded-full">
               <input
                 type="text"
                 placeholder="Search products"
@@ -55,12 +55,13 @@ const Navbar = () => {
               />
               <img src={search} alt="" />
             </div>
-            <div className="relative">
+
+            <Link to="/cart"> <div className=" cursor-pointer relative">
               <div className="h-[18px] flex items-center justify-center rounded-full w-[18px] absolute -right-2 -top-2  text-[12px] bg-[#4fbf8b] text-white">
                 0
               </div>{" "}
               <img src={cart} alt="" />
-            </div>
+            </div></Link>
 
             <div onClick={handleOpen} className="cursor-pointer px-8 py-2 hidden md:flex bg-[#4fbf8b] hover:bg-[#45a87a] transition text-white rounded-full">
               Login

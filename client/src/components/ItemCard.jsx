@@ -3,10 +3,28 @@ import { assets } from '../assets/assets'
 import star from "../assets/star_icon.svg"
 import cart from "../assets/cart_icon.svg";
 import star_dull from "../assets/star_dull_icon.svg"
-import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
 const ItemCard = ({item}) => {
+  const notify = (e) => {
+    e.stopPropagation(); 
+    toast.success("Added to Cart",{
+    position: 'top-center',
+    autoClose: 2000,         
+    closeOnClick: true,
+    hideProgressBar:true,         
+  });}
+
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/products/item`);
+  };
+
   return (
-   <Link to="/products/item"> <div className='sm:px-3 px-2 py-4 border border-gray-300 rounded-[5px] flex flex-col '>
+   <div onClick={()=>handleCardClick()} className='sm:px-3 px-2 py-4 border cursor-pointer border-gray-300 rounded-[5px] flex flex-col '>
+         <ToastContainer />
         <div className='flex justify-center'>
         <img className='hover:scale-110 duration-200 transition-transform' src={item.image[0]} width={130} height={130} alt="" />
         </div>
@@ -27,13 +45,14 @@ const ItemCard = ({item}) => {
             <p className='text-[15px] text-gray-400 line-through'>${item.offerPrice}</p>
             </div>
 
-            <div class="flex items-center cursor-pointer justify-center gap-2 bg-[#4fbf8b]/10 border border-[#4fbf8b]/40 px-2 md:w-20 w-16 h-8.5 rounded">
+            <div onClick={notify} class="flex items-center cursor-pointer justify-center gap-2 bg-[#4fbf8b]/10 border border-[#4fbf8b]/40 px-2 md:w-20 w-16 h-8.5 rounded">
                 <img src={cart} width={15} height={15} alt="" />
-                <p className='text-[14px] text-[#4fbf8b]'>Add</p>
+                <p  className='text-[14px] text-[#4fbf8b]'>Add</p>
             </div>
+         
         </div>
 
-    </div></Link>
+    </div>
   )
 }
 
