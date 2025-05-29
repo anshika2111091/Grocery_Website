@@ -11,10 +11,10 @@ const Contact = () => {
         discounts
       </p>
       <div className="flex  mt-3">
-        <div className="flex border border-r-0 border-gray-300 border-collapse rounded-tl-[5px] rounded-bl-[5px]  w-[40vw] justify-between">
+        <div className="flex border border-r-0 border-gray-300 border-collapse rounded-tl-[5px] rounded-bl-[5px] md:w-[40vw] w-[50vw] justify-between">
           <input
             type="text"
-            className="focus:outline-none  placeholder:text-gray-400 p-4"
+            className="focus:outline-none  placeholder:text-gray-400   md:p-4 p-2 "
             placeholder="Enter your email id"
           />
         </div>
