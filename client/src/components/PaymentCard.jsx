@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const PaymentCard = () => {
   return (
-    <div className=' lg:w-[30vw] w-[85vw] mx-auto lg:mx-0 my-5 p-6 bg-gray-500/10'>
+    <div className=' lg:w-[30vw] w-[85vw] mx-auto lg:mx-0  p-6 bg-gray-500/10'>
         <p className='font-medium text-[24px] mb-2 text-gray-700'>Order Summary</p>
         <hr  className='text-gray-400 mb-6'/>
 

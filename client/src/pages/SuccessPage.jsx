@@ -8,7 +8,7 @@ const SuccessPage = () => {
   return (
     <div className='w-full h-[100vh] flex justify-center items-center flex-col'>
     <div className="w-64 h-64">
-    <Lottie animationData={tick_animation} loop={true} />
+    <Lottie animationData={tick_animation} loop={true}/>
   </div>
   <p className='font-medium text-[22px]'>Order Placed Successfully!</p>
 <Link to="/"> <div className='flex gap-2 cursor-pointer mt-5'>
