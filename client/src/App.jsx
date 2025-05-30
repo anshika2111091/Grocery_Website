@@ -10,6 +10,7 @@ import Item from './pages/Item';
 import LoginSignup from './components/LoginSignup';
 import Cart from './pages/Cart';
 import SuccessPage from './pages/SuccessPage';
+import AddAddress from './pages/AddAddress';
 
 const AppContent = () => {
   const location = useLocation();
@@ -29,6 +30,7 @@ const AppContent = () => {
           <Route path="/sign" element={<LoginSignup />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/success" element={<SuccessPage />} />
+          <Route path="/add-address" element={<AddAddress />} />
         </Routes>
       </main>
 
