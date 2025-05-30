@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import Home from './pages/Home'
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -11,10 +11,13 @@ import LoginSignup from './components/LoginSignup';
 import Cart from './pages/Cart';
 import SuccessPage from './pages/SuccessPage';
 import AddAddress from './pages/AddAddress';
+import { ThemeContext } from './context/ThemeContext';
+import { Navigate } from 'react-router-dom';
 
 const AppContent = () => {
   const location = useLocation();
   const hideNavbarFooter = location.pathname === "/success";
+    const { search } = useContext(ThemeContext);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -22,15 +25,16 @@ const AppContent = () => {
 
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<AllProducts />} />
-          <Route path="/products/item" element={<Item />} />
-          <Route path="/products/*" element={<Product />} />
-          <Route path="/related" element={<RelatedProducts />} />
-          <Route path="/sign" element={<LoginSignup />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/success" element={<SuccessPage />} />
-          <Route path="/add-address" element={<AddAddress />} />
+          {search.length ? <Route path="/products" element={<AllProducts/>} /> :  <Route path="/" element={<Home/>} />}
+          <Route path="/" element={search.length ? <Navigate to="/products"/> : <Home/>} />
+          <Route path="/products" element={<AllProducts/>} />
+          <Route path="/products/item" element={<Item/>} />
+          <Route path="/products/*" element={<Product/>} />
+          <Route path="/related" element={<RelatedProducts/>} />
+          <Route path="/sign" element={<LoginSignup/>} />
+          <Route path="/cart" element={<Cart/>} />
+          <Route path="/success" element={<SuccessPage/>} />
+          <Route path="/add-address" element={<AddAddress/>} />
         </Routes>
       </main>
 

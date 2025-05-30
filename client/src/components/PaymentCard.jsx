@@ -12,7 +12,7 @@ const PaymentCard = () => {
         <p className='font-medium text-[16px] text-gray-700'>DELIVERY ADDRESS</p>
         <div className='flex justify-between items-center'>
      <p className='text-gray-500'>No address found</p>
-     <p className='text-[#4fbf8b] cursor-pointer hover:underline'>Change</p></div>
+    <Link to="/add-address"><p className='text-[#4fbf8b] cursor-pointer hover:underline'>Change</p></Link> </div>
         </div>
         
         <div className='flex flex-col gap-2'>

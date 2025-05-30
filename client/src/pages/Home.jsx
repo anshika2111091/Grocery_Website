@@ -7,14 +7,11 @@ import Hero from "../components/Hero"
 const Home = () => {
   return (
    <>
-
     <Hero/>
     <Categories/>
     <Seller/>
     <Features/>
     <Contact/>
-
-   
    </>
   )
 }

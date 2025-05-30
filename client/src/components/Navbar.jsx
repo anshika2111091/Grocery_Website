@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useContext, useEffect} from "react";
 import logo from "../assets/logo.svg";
 import search from "../assets/search_icon.svg";
 import cart from "../assets/nav_cart_icon.svg";
@@ -8,6 +8,8 @@ import Modal from '@mui/material/Modal';
 import LoginSignup from "./LoginSignup";
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../context/ThemeContext";
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -23,6 +25,8 @@ const Navbar = () => {
   const [open, setOpen] =useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const { search, setSearch } = useContext(ThemeContext);
+ 
 
   return (
     <>
@@ -50,6 +54,8 @@ const Navbar = () => {
          <div className=" items-center lg:flex  hidden justify-between px-3 py-1 border border-gray-300 rounded-full">
               <input
                 type="text"
+                value={search} 
+                onChange={(e)=>setSearch(e.target.value)}
                 placeholder="Search products"
                 className="outline-none placeholder:text-[14px]"
               />
