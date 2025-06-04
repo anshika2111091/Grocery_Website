@@ -9,17 +9,19 @@ import { useParams } from "react-router-dom";
 const ItemDescription = () => {
   const { id } = useParams();
   const [product, setProduct] = useState();
+  const [imgindex,setImageIndex]=useState(0);
   useEffect(() => {
     const product = dummyProducts.find((item) => item._id === id);
     setProduct(product);
+    setImageIndex(0);
   }, [id]);
   return (
     <div className="xl:w-[80vw] w-[95vw] mx-auto my-16 flex justify-center  md:gap-8 gap-13 items-center flex-col md:flex-row">
       <div className="flex gap-2">
         <div className="flex flex-col gap-2">
-          {product?.image?.map((item) => (
+          {product?.image?.map((item,index) => (
             <>
-              <div className="flex border cursor-pointer border-gray-300 rounded-[5px] w-[100px] h-[100px] items-center justify-center">
+              <div onClick={()=>setImageIndex(index)} key={index} className="flex border cursor-pointer border-gray-300 rounded-[5px] w-[100px] h-[100px] items-center justify-center">
                 <img src={item} alt="" />
               </div>
             </>
@@ -27,7 +29,7 @@ const ItemDescription = () => {
         </div>
 
         <div className="flex  w-[60vw] md:w-[25vw] border border-gray-300 rounded-[5px] items-center justify-center">
-          <img src={product?.image[0]} alt="" />
+          <img src={product?.image[imgindex]} alt="" />
         </div>
       </div>
 
