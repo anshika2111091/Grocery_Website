@@ -9,7 +9,7 @@ const RelatedProducts = () => {
       <div className="xl:w-[80vw] w-[95vw] mx-auto my-10 flex flex-col">
         <div className="flex  flex-col  mb-16 justify-center items-center">
           {" "}
-          <p class="text-2xl mb-0.5 md:text-3xl font-medium whitespace-nowrap text-gray-700  ">
+          <p className="text-2xl mb-0.5 md:text-3xl font-medium whitespace-nowrap text-gray-700  ">
             Related Products
           </p>
           <span className="bg-[#4fbf8b] h-0.5 rounded-full  bottom-0 text-end w-[70px]"></span>

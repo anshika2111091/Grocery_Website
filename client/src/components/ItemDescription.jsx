@@ -1,34 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import potato from "../assets/potato_image_1.png";
 
 import star from "../assets/star_icon.svg";
 import star_dull from "../assets/star_dull_icon.svg";
+import { dummyProducts } from "../assets/assets";
+import { useParams } from "react-router-dom";
 
 const ItemDescription = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState();
+  useEffect(() => {
+    const product = dummyProducts.find((item) => item._id === id);
+    setProduct(product);
+  }, [id]);
   return (
     <div className="xl:w-[80vw] w-[95vw] mx-auto my-16 flex justify-center  md:gap-8 gap-13 items-center flex-col md:flex-row">
       <div className="flex gap-2">
         <div className="flex flex-col gap-2">
-        <div className="flex cursor-pointer border border-gray-300 rounded-[5px] w-[100px] h-[100px] items-center justify-center">
-          <img src={potato} alt="" />
-        </div>
-        <div className="flex border cursor-pointer border-gray-300 rounded-[5px] w-[100px] h-[100px] items-center justify-center">
-          <img src={potato} alt="" />
-        </div>
-        <div className="flex border cursor-pointer border-gray-300 rounded-[5px] w-[100px] h-[100px] items-center justify-center">
-          <img src={potato} alt="" />
-        </div>
+          {product?.image?.map((item) => (
+            <>
+              <div className="flex border cursor-pointer border-gray-300 rounded-[5px] w-[100px] h-[100px] items-center justify-center">
+                <img src={item} alt="" />
+              </div>
+            </>
+          ))}
         </div>
 
         <div className="flex  w-[60vw] md:w-[25vw] border border-gray-300 rounded-[5px] items-center justify-center">
-          <img src={potato} alt="" />
+          <img src={product?.image[0]} alt="" />
         </div>
       </div>
 
       <div className="flex flex-col gap-7">
         <div className="flex flex-col gap-2">
           <p className="text-2xl xl:text-3xl text-gray-700 font-medium">
-            Potato 500g
+            {product?.name}
           </p>
           <div className="flex gap-1">
             {[...Array(4)].map((_, index) => (
@@ -42,24 +48,22 @@ const ItemDescription = () => {
         </div>
 
         <div className="flex flex-col gap-0.5">
-          <p className="text-gray-400 text-[14px] line-through">MRP: $50</p>
+          <p className="text-gray-400 text-[14px] line-through">
+            MRP: ${product?.price}
+          </p>
           <p className="text-xl xl:text-2xl text-gray-700 font-medium">
-            MRP: $44
+            MRP: ${product?.offerPrice}
           </p>
           <p className="text-[14px] text-gray-400">(inclusive of all taxes)</p>
         </div>
         <div className="flex flex-col gap-1">
           <p className="text-[16px] font-medium text-gray-700">About Product</p>
           <ul className="list-disc flex  flex-col items-start">
-            <li className="text-gray-400 text-[14px] ml-3">
-              Sweet and crunchy
-            </li>
-            <li className="text-gray-400 text-[14px] ml-3">
-              Sweet and crunchy
-            </li>
-            <li className="text-gray-400  text-[14px] ml-3">
-              Sweet and crunchy
-            </li>
+            {product?.description.map((item, index) => (
+              <li key={index} className="text-gray-400 text-[14px] ml-3">
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
 

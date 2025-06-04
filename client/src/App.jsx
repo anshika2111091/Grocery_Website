@@ -13,6 +13,7 @@ import SuccessPage from './pages/SuccessPage';
 import AddAddress from './pages/AddAddress';
 import { ThemeContext } from './context/ThemeContext';
 import { Navigate } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
 
 const AppContent = () => {
   const location = useLocation();
@@ -28,13 +29,14 @@ const AppContent = () => {
           {search.length ? <Route path="/products" element={<AllProducts/>} /> :  <Route path="/" element={<Home/>} />}
           <Route path="/" element={search.length ? <Navigate to="/products"/> : <Home/>} />
           <Route path="/products" element={<AllProducts/>} />
-          <Route path="/products/item" element={<Item/>} />
+          <Route path="/products/:id" element={<Item/>} />
           <Route path="/products/*" element={<Product/>} />
           <Route path="/related" element={<RelatedProducts/>} />
           <Route path="/sign" element={<LoginSignup/>} />
           <Route path="/cart" element={<Cart/>} />
           <Route path="/success" element={<SuccessPage/>} />
           <Route path="/add-address" element={<AddAddress/>} />
+          <Route path="/sidebar" element={<Sidebar/>} />
         </Routes>
       </main>
 

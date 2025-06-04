@@ -19,7 +19,7 @@ const ItemCard = ({item}) => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate(`/products/item`);
+    navigate(`/products/${item._id}`);
   };
 
   return (
