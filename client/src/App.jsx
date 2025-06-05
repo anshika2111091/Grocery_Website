@@ -30,7 +30,7 @@ const AppContent = () => {
           <Route path="/" element={search.length ? <Navigate to="/products"/> : <Home/>} />
           <Route path="/products" element={<AllProducts/>} />
           <Route path="/products/:id" element={<Item/>} />
-          <Route path="/products/*" element={<Product/>} />
+          <Route path="/products/category/*" element={<Product/>} />
           <Route path="/related" element={<RelatedProducts/>} />
           <Route path="/sign" element={<LoginSignup/>} />
           <Route path="/cart" element={<Cart/>} />

@@ -3,7 +3,7 @@ import { assets } from "../assets/assets";
 import { Link } from "react-router-dom";
 const Card = ({ item }) => {
   return (
-    <Link to={`/products/${item.path}`}>
+    <Link to={`/products/category/${item.path}`}>
       {" "}
       <div
         className="flex items-center justify-between  cursor-pointer flex-col gap-1 p-4 rounded-[10px]"

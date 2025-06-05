@@ -25,7 +25,7 @@ const Navbar = () => {
   const [open, setOpen] =useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const { search, setSearch } = useContext(ThemeContext);
+  const { search, setSearch,cartQuantity } = useContext(ThemeContext);
  
 
   return (
@@ -63,9 +63,9 @@ const Navbar = () => {
             </div>
 
             <Link to="/cart"> <div className=" cursor-pointer relative">
-              <div className="h-[18px] flex items-center justify-center rounded-full w-[18px] absolute -right-2 -top-2  text-[12px] bg-[#4fbf8b] text-white">
-                0
-              </div>{" "}
+           { cartQuantity>0 &&  <div className="h-[18px] flex items-center justify-center rounded-full w-[18px] absolute -right-2 -top-2  text-[12px] bg-[#4fbf8b] text-white">
+                {cartQuantity}
+              </div>}{" "}
               <img src={cart} alt="" />
             </div></Link>
 

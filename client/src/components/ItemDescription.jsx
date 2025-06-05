@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import potato from "../assets/potato_image_1.png";
+import { Link } from "react-router-dom";
 
 import star from "../assets/star_icon.svg";
 import star_dull from "../assets/star_dull_icon.svg";
@@ -73,9 +74,9 @@ const ItemDescription = () => {
           <div className="bg-gray-500/10 hover:bg-gray-800/10 cursor-pointer w-[40vw] md:w-[20vw] text-gray-600 text-[16px] font-medium grid place-content-center py-4">
             Add to Cart
           </div>
-          <div className="bg-[#4fbf8b]  hover:bg-[#45a87a] w-[40vw] md:w-[20vw] cursor-pointer text-white text-[16px] font-medium grid place-content-center py-4">
+        <Link to="/cart">  <div className="bg-[#4fbf8b]  hover:bg-[#45a87a] w-[40vw] md:w-[20vw] cursor-pointer text-white text-[16px] font-medium grid place-content-center py-4">
             Buy now
-          </div>
+          </div></Link>
         </div>
       </div>
     </div>
