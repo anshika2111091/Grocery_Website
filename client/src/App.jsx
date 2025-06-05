@@ -13,16 +13,17 @@ import SuccessPage from './pages/SuccessPage';
 import AddAddress from './pages/AddAddress';
 import { ThemeContext } from './context/ThemeContext';
 import { Navigate } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
+import Seller from './pages/Seller';
 
 const AppContent = () => {
   const location = useLocation();
-  const hideNavbarFooter = location.pathname === "/success";
+  const hideNavbar = location.pathname === "/success";
+  const hideFooter = location.pathname === "/success" || location.pathname==="/seller";
     const { search } = useContext(ThemeContext);
 
   return (
     <div className="flex flex-col min-h-screen">
-      {!hideNavbarFooter && <Navbar />}
+      {!hideNavbar && <Navbar />}
 
       <main className="flex-grow">
         <Routes>
@@ -36,11 +37,11 @@ const AppContent = () => {
           <Route path="/cart" element={<Cart/>} />
           <Route path="/success" element={<SuccessPage/>} />
           <Route path="/add-address" element={<AddAddress/>} />
-          <Route path="/sidebar" element={<Sidebar/>} />
+          <Route path="/seller" element={<Seller/>} />
         </Routes>
       </main>
 
-      {!hideNavbarFooter && <Footer />}
+      {!hideFooter && <Footer />}
     </div>
   );
 };

@@ -5,7 +5,7 @@ import order_icon from "../assets/order_icon.svg"
 
 const Sidebar = () => {
   return (
-    <div className='h-[calc(100vh-80px)]  md:w-[15vw] w-[10vw] flex flex-col border-r-[0.25px] border-gray-400'>
+    <div className='md:w-[15vw] w-[10vw] flex flex-col border-r-[0.25px] border-gray-400'>
         <div className='flex hover:bg-[#4fbf8b]/10 w-full py-3  items-center gap-3 hover:border-r-4  border-[#4fbf8b] pl-3 pr-3 md:pr-0'>
             <img src={add_icon} width={30} height={30} alt="" />
             <p className='hidden md:flex text-gray-700 text-[16px]'>Add Product</p>
