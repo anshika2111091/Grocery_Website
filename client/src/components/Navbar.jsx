@@ -39,9 +39,9 @@ const Navbar = () => {
             </div>
           </Link>
           <div className="flex xl:gap-8 md:gap-4 gap-6 items-center ">
-            <div className="border border-gray-300 text-gray-600 px-3 py-1 rounded-full text-xs hidden md:flex cursor-pointer opacity-80">
+           <Link to="/seller"> <div className="border border-gray-300 text-gray-600 px-3 py-1 rounded-full text-xs hidden md:flex cursor-pointer opacity-80">
               Seller Dashboard
-            </div>
+            </div></Link>
             <a href="/" className="text-gray-700 text-[16px] hidden md:flex">
               Home
             </a>

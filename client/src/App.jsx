@@ -14,6 +14,7 @@ import AddAddress from './pages/AddAddress';
 import { ThemeContext } from './context/ThemeContext';
 import { Navigate } from 'react-router-dom';
 import Seller from './pages/Seller';
+import { ThemeProvider } from './context/ThemeContext';
 
 const AppContent = () => {
   const location = useLocation();
@@ -47,9 +48,12 @@ const AppContent = () => {
 };
 
 const App = () => (
-  <Router>
+  <ThemeProvider>
+        <Router>
     <AppContent />
   </Router>
+  </ThemeProvider>
+
 );
 
 export default App;

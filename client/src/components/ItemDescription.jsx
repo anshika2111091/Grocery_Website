@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import potato from "../assets/potato_image_1.png";
 import { Link } from "react-router-dom";
-
 import star from "../assets/star_icon.svg";
 import star_dull from "../assets/star_dull_icon.svg";
 import { dummyProducts } from "../assets/assets";
